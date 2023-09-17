@@ -2,10 +2,6 @@
 {
     public void SortColors(params int[] nums)
     {
-        // red,white,blue
-        //  0     1     2 şeklinde sıralansın
-        // 1<=n<=300
-        // Sort olmadan çözülmesini istiyor
         if (nums.Length == 1) Console.Write(nums[0]);
         else
         {
@@ -20,7 +16,7 @@
                 b = a + 1;
                 list.Add(nums[a]);
             }
-            nums = list.ToArray();
+            Array.Copy(list.ToArray(), 0, nums, 0, nums.Length);
             foreach (var item in nums)
             {
                 Console.Write(item + " ");
